@@ -9,8 +9,6 @@ from queue import Queue
 from datetime import datetime
 
 
-# subprocess.call('clear', shell=True)
-
 # Main Function
 def main():
     socket.setdefaulttimeout(0.30)
