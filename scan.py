@@ -7,7 +7,11 @@ import sys
 import subprocess
 from queue import Queue
 from datetime import datetime
+import re
+import readline
 
+
+# subprocess.call('clear', shell=True)
 
 # Main Function
 def main():
@@ -27,6 +31,8 @@ def main():
     target = input("Enter your target IP address or URL here: ")
     error = ("Invalid Input")
     try:
+        if target.startswith(("http://", "https://")):
+            target = re.sub(r"https?://", "", target)
         t_ip = socket.gethostbyname(target)
     except (UnboundLocalError, socket.gaierror):
         print("\n\033[1;31m[-]Invalid format. Please use a correct IP or web address[-]\033[0m\n")
@@ -119,6 +125,7 @@ def main():
 
 if __name__ == '__main__':
     try:
+        readline.parse_and_bind("set editing-mode vi")
         main()
     except KeyboardInterrupt:
         print("\nGoodbye!")
