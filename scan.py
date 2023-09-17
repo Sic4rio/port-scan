@@ -15,7 +15,7 @@ socket.setdefaulttimeout(0.30)
 print_lock = threading.Lock()
 discovered_ports = []
 
-# Welcome Banner
+# Banner
 print("-" * 60)
 print("\033[1;34m    ____             __  _____")
 print("   / __ \____  _____/ /_/ ___/_________ _____  ____  ___  _____")
